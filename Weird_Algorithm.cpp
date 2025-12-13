@@ -44,9 +44,9 @@ void input(vector<T> &arr, int n)
 
 void solve()
 {
-    int n;
+    long long n;
     cin>>n;
-    vector<int> ans;
+    vector<long long> ans;
     ans.push_back(n);
     while(n!=1){
         if(n%2==0) n/=2;
