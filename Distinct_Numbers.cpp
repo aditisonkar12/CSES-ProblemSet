@@ -48,11 +48,11 @@ int solve()
     cin >> n;
     vector<int> arr(n);
     input(arr, n);
-    sort(a.begin(), a.end());
+    sort(arr.begin(), arr.end());
 
     int cnt = 1;
     for (int i = 1; i < n; i++)
-        if (a[i] != a[i - 1])
+        if (arr[i] != arr[i - 1])
             cnt++;
 
     return cnt;
