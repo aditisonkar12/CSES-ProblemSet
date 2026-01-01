@@ -48,13 +48,14 @@ int solve()
     cin >> n;
     vector<int> arr(n);
     input(arr, n);
+    sort(a.begin(), a.end());
 
-    unordered_map<int, int> freq;
-    for (int i = 0; i < n; i++) {
-        freq[arr[i]]++;
-    }
+    int cnt = 1;
+    for (int i = 1; i < n; i++)
+        if (a[i] != a[i - 1])
+            cnt++;
 
-    return freq.size();
+    return cnt;
 }
 
 int main()
