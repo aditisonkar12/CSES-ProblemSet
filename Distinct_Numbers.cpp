@@ -42,17 +42,19 @@ void input(vector<T> &arr, int n)
     }
 }
 
-void solve()
+int solve()
 {
     int n;
-    cin>>n;
+    cin >> n;
     vector<int> arr(n);
-    input(arr,n);
-    unordered_map<int,int> freq;
-    for(int i=0;)i<n;i++)
-    {
-        
+    input(arr, n);
+
+    unordered_map<int, int> freq;
+    for (int i = 0; i < n; i++) {
+        freq[arr[i]]++;
     }
+
+    return freq.size();
 }
 
 int main()
@@ -60,6 +62,6 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    solve();
+    cout << solve();
     return 0;
 }
