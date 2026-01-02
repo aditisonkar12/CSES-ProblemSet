@@ -44,6 +44,12 @@ void input(vector<T> &arr, int n)
 
 void solve()
 {
+    int n,m,k;
+    cin >> n >> m >> k;
+    vi a(n), b(m);
+    input(a, n);
+    input(b, m);
+    
 }
 
 int main()
