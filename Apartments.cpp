@@ -42,14 +42,30 @@ void input(vector<T> &arr, int n)
     }
 }
 
-void solve()
+int solve()
 {
     int n,m,k;
     cin >> n >> m >> k;
     vi a(n), b(m);
     input(a, n);
     input(b, m);
-    
+    sort(a.begin(), a.end());
+    sort(b.begin(), b.end());
+    int i=0,j=0, cnt=0;
+    while(i<n && j<m){
+        if(abs(a[i]-b[j])<=k){
+            cnt++;
+            i++;
+            j++;
+        }
+        else if(a[i]<b[j]){
+            i++;
+        }
+        else{
+            j++;
+        }
+    }
+    return cnt;
 }
 
 int main()
@@ -57,6 +73,6 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    solve();
+    cout<<solve();
     return 0;
 }
