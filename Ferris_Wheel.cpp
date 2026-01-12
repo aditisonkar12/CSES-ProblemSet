@@ -57,7 +57,7 @@ void solve()
     ans += (total_weight / x);
     if (total_weight % x != 0)
         ans++;
-    cout << ans << "\n";
+    cout<<ans;
 }
 
 int main()
@@ -65,6 +65,6 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    cout << solve;
+    solve();
     return 0;
 }
