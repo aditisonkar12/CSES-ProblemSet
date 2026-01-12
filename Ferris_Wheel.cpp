@@ -49,9 +49,7 @@ void solve()
     vi wts(n);
     input(wts, n);
 
-    int total_weight = 0;
-    for (int w : wts)
-        total_weight += w;
+    sort(wts.begin(), wts.end());
 
     int ans = 0;
     ans += (total_weight / x);
