@@ -51,12 +51,16 @@ void solve()
 
     sort(wts.begin(), wts.end());
 
+    int i = 0, j = n - 1;
     int ans = 0;
-    ans += (total_weight / x);
 
-    if (total_weight % x != 0)
+    while (i <= j)
+    {
+        if (wts[i] + wts[j] <= x)
+            i++;
+        j--;
         ans++;
-
+    }
     cout << ans;
 }
 
