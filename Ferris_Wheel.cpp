@@ -44,18 +44,20 @@ void input(vector<T> &arr, int n)
 
 void solve()
 {
-    int n,x;
-    cin>>n>>x;
+    int n, x;
+    cin >> n >> x;
     vi wts(n);
-    input(wts,n);
-    int total_weight=0;
-    for(int w: wts){
-        total_weight+=w;
+    input(wts, n);
+    int total_weight = 0;
+    for (int w : wts)
+    {
+        total_weight += w;
     }
-    int ans=0;
-    ans+=(total_weight/x);
-    if(total_weight%x!=0) ans++;
-    cout<<ans<<"\n";
+    int ans = 0;
+    ans += (total_weight / x);
+    if (total_weight % x != 0)
+        ans++;
+    cout << ans << "\n";
 }
 
 int main()
@@ -63,6 +65,6 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    cout<<solve;
+    cout << solve;
     return 0;
 }
