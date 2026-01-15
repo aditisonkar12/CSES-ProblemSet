@@ -45,30 +45,35 @@ void input(vector<T> &arr, int n)
 void solve()
 {
     int n;
-    cin>>n;
+    cin >> n;
     vector<pii> customers(n);
-    for(int i=0;i<n;i++){
-        int a,b;
-        cin>>a>>b;
-        customers[i]={a,b};
+    for (int i = 0; i < n; i++)
+    {
+        int a, b;
+        cin >> a >> b;
+        customers[i] = {a, b};
     }
-    
-    sort(customers.begin(),customers.end());
+
+    sort(customers.begin(), customers.end());
     multiset<int> leavingTime;
-    int maxi=0;
-    for(int i=0;i<n;i++){
-        int start=customers[i].first;
-        int end=customers[i].second;
-        auto it=leavingTime.upper_bound(start);
-        if(it!=leavingTime.begin()){
+    int maxi = 0;
+    for (int i = 0; i < n; i++)
+    {
+        int start = customers[i].first;
+        int end = customers[i].second;
+        auto it = leavingTime.upper_bound(start);
+        if (it != leavingTime.begin())
+        {
             leavingTime.erase(--it);
             leavingTime.insert(end);
-        }else{
+        }
+        else
+        {
             leavingTime.insert(end);
             maxi++;
         }
     }
-    cout<<maxi<<endl;
+    cout << maxi << endl;
 }
 
 int main()
