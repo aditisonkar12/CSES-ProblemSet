@@ -42,7 +42,7 @@ void input(vector<T> &arr, int n)
     }
 }
 
-int solve()
+void solve()
 {
     int n,m;
     cin>>n>>m;
