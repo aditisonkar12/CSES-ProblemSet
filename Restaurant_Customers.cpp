@@ -44,6 +44,30 @@ void input(vector<T> &arr, int n)
 
 void solve()
 {
+    int n;
+    cin>>n;
+    vector<pii> customers(n);
+    for(int i=0;i<n;i++){
+        int a,b;
+        cin>>a>>b;
+        customers[i]={a,b};
+    }
+    sort(customers.begin(),customers.end());
+    multiset<int> tableEndTimes;
+    int maxTables=0;
+    for(int i=0;i<n;i++){
+        int start=customers[i].first;
+        int end=customers[i].second;
+        auto it=tableEndTimes.upper_bound(start);
+        if(it!=tableEndTimes.begin()){
+            tableEndTimes.erase(--it);
+            tableEndTimes.insert(end);
+        }else{
+            tableEndTimes.insert(end);
+            maxTables++;
+        }
+    }
+    cout<<maxTables<<endl;
 }
 
 int main()
