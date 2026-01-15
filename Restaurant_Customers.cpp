@@ -52,22 +52,23 @@ void solve()
         cin>>a>>b;
         customers[i]={a,b};
     }
+    
     sort(customers.begin(),customers.end());
-    multiset<int> tableEndTimes;
-    int maxTables=0;
+    multiset<int> leavingTime;
+    int maxi=0;
     for(int i=0;i<n;i++){
         int start=customers[i].first;
         int end=customers[i].second;
-        auto it=tableEndTimes.upper_bound(start);
-        if(it!=tableEndTimes.begin()){
-            tableEndTimes.erase(--it);
-            tableEndTimes.insert(end);
+        auto it=leavingTime.upper_bound(start);
+        if(it!=leavingTime.begin()){
+            leavingTime.erase(--it);
+            leavingTime.insert(end);
         }else{
-            tableEndTimes.insert(end);
-            maxTables++;
+            leavingTime.insert(end);
+            maxi++;
         }
     }
-    cout<<maxTables<<endl;
+    cout<<maxi<<endl;
 }
 
 int main()
