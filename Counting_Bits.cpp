@@ -45,7 +45,15 @@ void solve() {
     cin>>n;
 
     long long ans=0;
-    
+    for(int i=0;(1LL<<i)<=n;i++){
+        long long x=1LL<<(i+1);
+        long long div=(n+1)/x;
+        long long rem=(n+1)%x;
+
+        ans+=div*(1LL<<i);
+        ans+=max(0LL,rem-(1LL<<i));
+    }
+    cout<<ans<<"\n";
 }
 
 int main() {
