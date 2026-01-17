@@ -41,6 +41,10 @@ void input(vector<T> &arr, int n) {
 }
 
 void solve() {
+    long long n;
+    cin>>n;
+
+    long long ans=0;
     
 }
 
@@ -48,10 +52,6 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
 
-    int t;
-    cin >> t;
-    while (t--) {
-        solve();
-    }
+    solve();
     return 0;
 }
